@@ -81,6 +81,7 @@ module RubyLLM
       return :video if video?
       return :audio if audio?
       return :pdf if pdf?
+      return :xlsx if xlsx?
       return :text if text?
 
       :unknown
@@ -111,6 +112,10 @@ module RubyLLM
 
     def pdf?
       RubyLLM::MimeType.pdf? mime_type
+    end
+
+    def xlsx?
+      RubyLLM::MimeType.xlsx? mime_type
     end
 
     def text?

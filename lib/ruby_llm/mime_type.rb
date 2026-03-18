@@ -27,6 +27,10 @@ module RubyLLM
       type == 'application/pdf'
     end
 
+    def xlsx?(type)
+      type == "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+    end
+
     def text?(type)
       type.start_with?('text/') ||
         TEXT_SUFFIXES.any? { |suffix| type.end_with?(suffix) } ||
